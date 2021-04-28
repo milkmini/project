@@ -1,0 +1,47 @@
+query CalculateModel(
+	$modelId: ID!
+) {
+	calculate(
+		modelId: $modelId
+	) {
+		bookings
+		revenue
+		totalCost
+		bookings
+		marketingBudget
+		recommendations {
+			yourSalesHeads
+			recommendedSalesHeads
+			yourSupportHeads
+			recommendedSupportHeads
+		}
+		segments {
+			name
+			marketingBudgetDistribution
+			bookings
+			revenue
+			organicLeads
+			marketingLeads
+			totalLeads
+			totalOpportunities
+			activeOpportunities
+			activeCustomers
+		}
+		team {
+			totalCost
+			departments {
+				name
+				totalCost
+				employees {
+					firstName
+					lastName
+					cost
+				}
+				roles {
+					name
+					counts
+				}
+			}
+		}
+	}
+}

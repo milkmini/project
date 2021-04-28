@@ -1,0 +1,10 @@
+query GetDepartments(
+	$companyId: ID!
+) {
+	company(companyId: $companyId) {
+		departments {
+			id
+			name
+		}
+	}
+}

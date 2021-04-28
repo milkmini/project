@@ -1,0 +1,31 @@
+mutation CreateFinModel (
+  	$model: FinModelInput!
+	$companyId: ID!
+) {
+  	createFinModel (
+		model: $model
+    	companyId: $companyId
+  	) {
+    	name
+  	}
+} 
+
+mutation UpdateFinModel (
+		$modelId: ID!
+  	$model: FinModelUpdateInput!
+) {
+  	updateFinModel (
+		model: $model
+    	modelId: $modelId
+    ) {
+    	name
+  	}
+} 
+
+mutation DeleteFinModel (
+	$modelId: ID!
+) {
+  	deleteFinModel (
+    	modelId: $modelId
+    )
+} 

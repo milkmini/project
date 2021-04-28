@@ -1,0 +1,33 @@
+mutation CreateDepartment(
+	$departament: DepartmentInput!
+	$companyID: ID!
+) {
+	createDepartment (
+		department: $departament
+		companyId: $companyID
+	) {
+		id
+	}
+}
+
+mutation updateDepartment (
+	$departmentId: ID!
+  	$name: String!
+) {
+  	updateDepartment (
+		departmentId: $departmentId
+		department: {
+			name: $name
+		}
+  	) {
+    	name
+  	}
+} 
+
+mutation deleteDepartment (
+	$departmentId: ID!
+) {
+  	deleteDepartment (
+    	departmentId: $departmentId
+  	)
+} 

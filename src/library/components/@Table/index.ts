@@ -1,0 +1,1 @@
+export { ModelTable } from './ModelTable';

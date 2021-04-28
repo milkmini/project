@@ -1,0 +1,18 @@
+mutation CreateCompany(
+	$name: String!
+	$fieldOfActivity: FieldOfActivityInput!
+	$stageOfDevelopment: StageOfDevelopmentInput!
+	$businessModel: BusinessModelInput!
+) {
+	createCompany (
+		company: {
+			name: $name
+			fieldOfActivity: $fieldOfActivity
+			stageOfDevelopment: $stageOfDevelopment
+			businessModel: $businessModel
+		}
+	) {
+		id
+		name
+	}
+}

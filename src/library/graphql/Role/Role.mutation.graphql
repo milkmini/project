@@ -1,0 +1,51 @@
+mutation CreateRole(
+	$departmentId: ID!
+	$name: String!
+	$roleDescription: String!
+	$annualFixedSalary: Int!
+	$additionalMonthlyOverhead: Int!
+	$monthlyCommission: Int!
+) {
+	createRole (
+		departmentId: $departmentId
+		role: {
+			name: $name
+			roleDescription: $roleDescription
+			annualFixedSalary: $annualFixedSalary
+			monthlyCommission: $monthlyCommission
+			additionalMonthlyOverhead: $additionalMonthlyOverhead
+		}
+	) {
+		id
+	}
+}
+
+mutation updateRole(
+	$roleId: ID!
+  	$name: String!
+  	$roleDescription: String!
+  	$annualFixedSalary: Int!
+  	$additionalMonthlyOverhead: Int!
+  	$monthlyCommission: Int!
+) {
+  	updateRole(
+    	roleId: $roleId
+      	role: {
+          name: $name
+          roleDescription: $roleDescription
+          annualFixedSalary: $annualFixedSalary
+          additionalMonthlyOverhead: $additionalMonthlyOverhead
+          monthlyCommission: $monthlyCommission
+        }
+    ) {
+    	id
+  	}
+}
+
+mutation deleteRole (
+  $roleId: ID!
+) {
+  deleteRole (
+    	roleId: $roleId
+  )
+}

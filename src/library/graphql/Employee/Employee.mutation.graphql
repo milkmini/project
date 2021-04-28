@@ -1,0 +1,60 @@
+mutation CreateEmployee(
+	$lastName: String!
+	$firstName: String!
+	$jobDescription: String!
+	$roleDescription: String!
+	$annualFixedSalary: Int!
+	$monthlyCommission: Int!
+	$additionalMonthlyOverhead: Int!
+	$departmentId: ID!
+) {
+	createEmployee (
+		departmentId: $departmentId
+		employee: {
+			lastName: $lastName
+			firstName: $firstName
+			jobDescription: $jobDescription
+			roleDescription: $roleDescription
+			annualFixedSalary: $annualFixedSalary
+			monthlyCommission: $monthlyCommission
+			additionalMonthlyOverhead: $additionalMonthlyOverhead
+		}
+	) {
+		id
+	}
+}
+
+
+mutation updateEmployee (
+	$firstName: String!
+	$lastName: String!
+	$jobDescription: String!
+	$roleDescription: String!
+	$annualFixedSalary: Int!
+	$additionalMonthlyOverhead: Int!
+	$monthlyCommission: Int!
+	$employeeId: ID!
+) {
+  	updateEmployee (
+		employeeId: $employeeId
+		employee: {
+			firstName: $firstName
+			lastName: $lastName
+			jobDescription: $jobDescription  
+			roleDescription: $roleDescription
+			annualFixedSalary: $annualFixedSalary
+			additionalMonthlyOverhead: $additionalMonthlyOverhead
+			monthlyCommission: $monthlyCommission
+		}
+	) {
+		id
+	}
+}
+
+mutation deleteEmployee (
+  	$employeeId: ID!
+) {
+	deleteEmployee (
+		employeeId: $employeeId
+	)
+}

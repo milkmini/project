@@ -1,0 +1,130 @@
+mutation createSegment (
+  	$modelId: ID!
+	$name: String!
+	$LAC: Int!	
+	$LPO: Int!
+	$LNT: Int!
+	$LTOC: Float!
+	$ASL: Int!
+	$OCR: Float!
+	$ACV: Int!
+	$OCV: Int!
+	$ACC: Float!
+	$MOSH: Int!
+	$MCSH: Int!
+	
+) {
+	createMarketSegment (
+		modelId: $modelId
+		segment: {
+			name: $name
+			LAC: $LAC
+			LPO: $LPO
+			LNT: $LNT
+			LTOC: $LTOC
+			ASL: $ASL
+			OCR: $OCR
+			ACV: $ACV
+			OCV: $OCV
+			ACC: $ACC
+			MOSH: $MOSH
+			MCSH: $MCSH
+		}
+	) {
+		id
+		name
+		LAC
+		ACC
+		ACV
+		ASL
+		LNT
+		LPO
+		LTOC
+		MCSH
+		MOSH
+		OCR
+		OCV
+  }
+}
+
+mutation createModelAndSegment (
+    $companyId: ID!
+	$name: String!
+	$LAC: Int!	
+	$LPO: Int!
+	$LNT: Int!
+	$LTOC: Float!
+	$ASL: Int!
+	$OCR: Float!
+	$ACV: Int!
+	$OCV: Int!
+	$ACC: Float!
+	$MOSH: Int!
+	$MCSH: Int!
+	
+) {
+  	createFinModelAndMarketSegment (
+		companyId: $companyId
+		segment: {
+			name: $name
+			LAC: $LAC
+			LPO: $LPO
+			LNT: $LNT
+			LTOC: $LTOC
+			ASL: $ASL
+			OCR: $OCR
+			ACV: $ACV
+			OCV: $OCV
+			ACC: $ACC
+			MOSH: $MOSH
+			MCSH: $MCSH
+		}
+	) {
+		id
+		modelId
+	}
+}
+
+mutation updateSegment (
+	$name: String!
+	$LAC: Int!	
+	$LPO: Int!
+	$LNT: Int!
+	$LTOC: Float!
+	$ASL: Int!
+	$OCR: Float!
+	$ACV: Int!
+	$OCV: Int!
+	$ACC: Float!
+	$MOSH: Int!
+	$MCSH: Int!
+  	$segmentId: ID!
+) {
+	updateMarketSegment (
+		segmentId: $segmentId
+		segment: {
+			name: $name
+			LAC: $LAC
+			LPO: $LPO
+			LNT: $LNT
+			LTOC: $LTOC
+			ASL: $ASL
+			OCR: $OCR
+			ACV: $ACV
+			OCV: $OCV
+			ACC: $ACC
+			MOSH: $MOSH
+			MCSH: $MCSH
+		}
+	) {
+		id
+	}
+}
+
+mutation deleteSegment (
+  	$segmentId: ID!
+) {
+	deleteMarketSegment (
+		segmentId: $segmentId
+	)
+}

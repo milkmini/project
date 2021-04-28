@@ -1,0 +1,15 @@
+query GetCompany(
+	$companyId: ID!
+	) {
+		company(companyId: $companyId) {
+			id
+			name
+	}
+}
+
+query GetMyCompanies {
+	myCompanies {
+		id
+		name
+	}
+}

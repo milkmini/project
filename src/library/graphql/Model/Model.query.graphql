@@ -1,0 +1,10 @@
+query GetModels(
+	$companyId: ID!
+) {
+	company(companyId: $companyId) {
+		models {
+			id
+			name
+		}
+	}
+}

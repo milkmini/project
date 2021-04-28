@@ -1,0 +1,17 @@
+query getRoles (
+	$departmentId: ID!
+) {
+	department (
+    	departmentId: $departmentId
+	) {
+		roles {
+			id
+			counts
+			name
+			roleDescription
+			additionalMonthlyOverhead
+			annualFixedSalary
+			monthlyCommission
+		}
+	}
+}

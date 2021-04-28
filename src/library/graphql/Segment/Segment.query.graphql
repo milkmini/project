@@ -1,0 +1,41 @@
+query GetSegments(
+	$modelId: ID!
+) {
+	finModel(modelId: $modelId) {
+		segments {
+			id
+			name
+			LAC
+			LNT
+			LPO
+			LTOC
+			ASL
+			OCR
+			ACV
+			OCV
+			ACC
+			MOSH
+			MCSH
+		}
+	}
+}
+
+query GetSegment(
+	$segmentId: ID!
+) {
+	marketSegment(segmentId: $segmentId) {
+		id
+		name
+		LAC
+		LNT
+		LPO
+		LTOC
+		ASL
+		OCR
+		ACV
+		OCV
+		ACC
+		MOSH
+		MCSH
+	}
+}

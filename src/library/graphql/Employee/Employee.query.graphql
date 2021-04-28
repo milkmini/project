@@ -1,0 +1,31 @@
+query getEmployees (
+	$departmentId: ID!
+) {
+	department (
+    	departmentId: $departmentId
+	) {
+		employees {
+			id
+			firstName
+			lastName
+			annualFixedSalary
+			additionalMonthlyOverhead
+			monthlyCommission
+		}
+	}
+}
+
+query getEmployee (
+  $employeeId: ID!
+) {
+   employee (
+    employeeId: $employeeId
+  ) {
+    id
+    firstName
+    lastName
+    annualFixedSalary
+    additionalMonthlyOverhead
+    monthlyCommission
+  }
+}	

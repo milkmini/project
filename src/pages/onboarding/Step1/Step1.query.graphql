@@ -1,0 +1,20 @@
+query GetBusinessModels {
+	businessModel {
+		id
+		name
+	}
+}
+
+query GetStagesOfDevelopment {
+	stagesOfDevelopment {
+    	id
+    	name
+  	}
+}
+
+query GetFieldsOfActivities {
+  	fieldsOfActivity {
+    	id
+    	name
+  	}
+}
